@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join us in empowering underprivileged children through education.">
+    <title>Funding Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #f4f4f4;
+            background: linear-gradient(to bottom right, #1a1a1a, #2e2e2e);
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: #f4f4f4;
+            text-decoration: none;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: auto;
+            min-height: 100%;
+            min-width: 100%;
+            transform: translate(-50%, -50%);
+            filter: brightness(0.5);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        section {
+            margin: 40px 0;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h2 {
+            color: #28a745;
+            text-align: center;
+        }
+
+        .student-goal {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .student-image {
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .gallery {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-slides {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none; /* Hide all slides by default */
+            width: 100%;
+        }
+
+        .slide.active {
+            display: block; /* Show only the active slide */
+        }
+
+        .gallery-controls {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .faq {
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .faq p {
+            display: none; /* Hidden by default */
+        }
+
+        .sponsor-logos {
+            overflow: hidden;
+            width: 100%;
+            height: 100px; /* Fixed height for sponsor section */
+            position: relative;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .sponsor-container {
+            display: flex;
+            width: calc(100% * 3); /* Adjust this based on the number of logos */
+            animation: slide 10s linear infinite;
+        }
+
+        .sponsor-logo {
+            width: 100px;
+            margin: 10px;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            33% { transform: translateX(0); }
+            50% { transform: translateX(-100%); }
+            83% { transform: translateX(-100%); }
+            100% { transform: translateX(0); }
+        }
+
+        .student-stories {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .student-story {
+            max-width: 600px;
+            text-align: left;
+            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/f55b7f39-d000-45bd-9ffa-a1a922b11f27.jpg" alt="Logo" class="logo">
+        <h1>Your Educational Fundraising Title</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#donate">Donate</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#help">Request Help</a></li>
+                <li><a href="#sponsors">Sponsors</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#newsletter">Newsletter</a></li>
+                <li><a href="#events">Events</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <video autoplay muted loop>
+                <source src="images/Primary School Teacher Working With Students In Classroom - 4K Vídeo de stock e mais clipes de vídeo de Criança - iStock - Google Chrome 2024-10-31 09-35-53.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-content">
+                <h1>Empower Education</h1>
+                <p>Join us in making a difference in the lives of underprivileged children.</p>
+                <button onclick="alert('Thank you for your support!')">Donate Now</button>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Our Mission</h2>
+            <p>We are dedicated to providing quality education to underprivileged children in need. Our organization works tirelessly to ensure that every child has access to the resources and opportunities necessary for a brighter future.</p>
+        </section>
+
+        <section id="impact">
+            <h2>Our Impact</h2>
+            <p>Since our inception, we have positively impacted thousands of lives through education. Your support can help us expand our reach and continue making a difference.</p>
+        </section>
+
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <div class="gallery">
+                <div class="gallery-slides">
+                    <img src="images/a50de56ed58b09693af92ba89b9ba309.jpg" alt="Gallery Image 1" class="slide active">
+                    <img src="images/poor-village-children-standing-together-isolated-unique-photo-bangladeshi-children-standing-together-around-place-unique-126193633.webp" alt="Gallery Image 2" class="slide">
+                    <img src="images/students-in-an-african-village-study-during-a-typical-school-day-BXYPYY.jpg" alt="Gallery Image 3" class="slide">
+                </div>
+                <div class="gallery-controls">
+                    <button id="prev" onclick="changeSlide(-1)">❮</button>
+                    <button id="next" onclick="changeSlide(1)">❯</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="donate">
+            <h2>Donation Information</h2>
+            <p>Your contributions help us provide essential resources for students.</p>
+            <img src="pay.jpeg" alt="Payment Options" class="payment-image" >
+            <p>Scan the QR code or use the link to make a payment.</p>
+        </section>
+
+        <section id="help">
+            <h2>Request Help</h2>
+            <p>If you are a student seeking assistance, please provide your degree and any relevant proof.</p>
+            <form action="submit_help_request.php" method="post" enctype="multipart/form-data">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="degree">Degree:</label>
+                <input type="text" id="degree" name="degree" required>
+                <label for="proof">Proof Document (Upload):</label>
+                <input type="file" id="proof" name="proof" accept="application/pdf" required>
+                <button type="submit">Submit Request</button>
+            </form>
+        </section>
+
+        <section id="sponsors">
+            <h2>Our Sponsors</h2>
+            <div class="sponsor-logos">
+                <div class="sponsor-container">
+                    <img src="images/apple logo.webp" alt="Sponsor 1" class="sponsor-logo">
+                    <img src="images/McDonalds_Golden_Arches.svg.webp" alt="Sponsor 2" class="sponsor-logo">
+                    <img src="images/dezeen_twitter-bird.webp" alt="Sponsor 3" class="sponsor-logo">
+                    <img src="images/apple logo.webp" alt="Sponsor 1" class="sponsor-logo">
+                    <img src="images/McDonalds_Golden_Arches.svg.webp" alt="Sponsor 2" class="sponsor-logo">
+                    <img src="images/dezeen_twitter-bird.webp" alt="Sponsor 3" class="sponsor-logo">
+                </div>
+            </div>
+            <p>We are grateful for the support of our sponsors.</p>
+        </section>
+
+        <section id="testimonials">
+            <h2>What Our Beneficiaries Say</h2>
+            <blockquote>
+                <p>"Thanks to this organization, I was able to complete my education!"</p>
+                <footer>- Student HARSH RAJ</footer>
+            </blockquote>
+            <blockquote>
+                <p>"The support I received changed my life. I'm now pursuing my dreams."</p>
+                <footer>- Student AYUSH RAJ</footer>
+            </blockquote>
+        </section>
+
+        <section id="newsletter">
+            <h2>Stay Updated</h2>
+            <form action="submit_newsletter.php" method="post">
+                <label for="email">Enter your email to subscribe:</label>
+                <input type="email" id="email" name="email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+
+        <section id="events">
+            <h2>Upcoming Events</h2>
+            <ul>
+                <li>Fundraising Gala - Date</li>
+                <li>Community Workshop - Date</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <p>If you have any questions, feel free to reach out to us at <strong>edu412@gmail.com</strong>.</p>
+            <form action="submit_contact.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq">
+                <h4>What is the mission of your organization?</h4>
+                <p>Our mission is to provide access to quality education for underprivileged children, helping them build a brighter future.</p>
+            </div>
+            <div class="faq">
+                <h4>How can I contribute?</h4>
+                <p>You can contribute by making a donation, volunteering, or spreading the word about our cause.</p>
+            </div>
+            <div class="faq">
+                <h4>Where does my donation go?</h4>
+                <p>Your donations go directly towards educational programs, resources, and supporting the children in need.</p>
+            </div>
+            <div class="faq">
+                <h4>Can I volunteer with your organization?</h4>
+                <p>Yes! We welcome volunteers who are passionate about making a difference. Please contact us for more details.</p>
+            </div>
+        </section>
+
+        <section id="student-goals">
+            <h2>Student Goals</h2>
+            <div class="student-goal">
+                <img src="images/441d98cd-4250-40dd-bb89-2f2586d060e8.jpg" alt="Ayush Raj" class="student-image">
+                <h3>Ayush Raj</h3>
+                <div class="student-stories">
+                    <div class="student-story">
+                        <p><strong>Goal:</strong> To become a successful teacher and inspire others.</p>
+                        <p><strong>Background:</strong> Ayush grew up in a small village where access to quality education was limited. Coming from a very poor family, he faced numerous challenges, including financial constraints and a lack of resources. Despite these hardships, his determination to learn and excel never waned.</p>
+                        <p><strong>Story:</strong> As a child, Ayush often walked miles to attend the nearest school, inspired by teachers who dedicated their time and energy to help students succeed. He vividly remembers a day when his teacher spent hours after class to help him understand a complex math problem. That moment ignited his passion for education.</p>
+                        <p>Despite working odd jobs to support his family, Ayush remains hopeful, believing that education is key to breaking the cycle of poverty. With your support, he hopes to complete his degree and inspire the next generation.</p>
+                        <p><strong>Progress:</strong> 30% funded</p>
+                        <button onclick="alert('Thank you for your support!')">Support Ayush</button>
+                    </div>
+                    <div class="student-story">
+                        <img src="images/517722f9-1b6e-466c-8281-e9025f09abaf.jpg" alt="Another Student" class="student-image">
+                        <h3>Another Student</h3>
+                        <p><strong>Goal:</strong> To become a doctor and help others.</p>
+                        <p><strong>Background:</strong> Growing up in a rural community, this student faced significant barriers to education but is determined to succeed.</p>
+                        <p><strong>Story:</strong> Inspired by a local doctor who provided care to their village, this student has dedicated their life to pursuing medicine.</p>
+                        <p><strong>Progress:</strong> 20% funded</p>
+                        <button onclick="alert('Thank you for your support!')">Support Another Student</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Organization Name. All Rights Reserved.</p>
+        <p>Follow us on:
+            <a href="https://facebook.com">Facebook</a> |
+            <a href="https://twitter.com">Twitter</a> |
+            <a href="https://instagram.com">Instagram</a>
+        </p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function changeSlide(direction) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        // Automatically change slides every 5 seconds
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+
+        // FAQ toggle functionality
+        const faqs = document.querySelectorAll('.faq');
+        faqs.forEach(faq => {
+            faq.addEventListener('click', () => {
+                const answer = faq.querySelector('p');
+                answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>
